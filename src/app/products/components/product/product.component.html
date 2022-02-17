@@ -3,6 +3,6 @@
 <p>{{product.description | slice:0:10}}</p>
 <div class="price-cart">
     <strong> {{ product.price | currency}} </strong> 
-    <button (click)="addCart()">Agregar al carrito</button>
+    <button (click)="addCart()" mat-raised-button color="primary">Agregar al carrito</button>
     <a [routerLink]="['/products',product.id]">Ver detalle</a>
 </div>
