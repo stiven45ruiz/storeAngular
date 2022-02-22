@@ -70,6 +70,29 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
+            },
+            "stag": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.stag.ts"
+                }
+              ],
+              "outputHashing": "all"
             }
           },
           "defaultConfiguration": "production"
@@ -80,8 +103,8 @@
             "production": {
               "browserTarget": "platzi-store:build:production"
             },
-            "development": {
-              "browserTarget": "platzi-store:build:development"
+            "stag": {
+              "browserTarget": "platzi-store:build:stag"
             }
           },
           "defaultConfiguration": "development"

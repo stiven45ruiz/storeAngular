@@ -19,21 +19,21 @@ export class ProductsService {
   }
 
   getAllProducts(){
-    return this.http.get<Product[]>(`${environment.url_api}/products`);
+    return this.http.get<Product[]>(`${environment.urlAPI}/products`);
   }
   getProduct(id: string){
-    return this.http.get<Product>(`${environment.url_api}/products/${id}`);
+    return this.http.get<Product>(`${environment.urlAPI}/products/${id}`);
   }
 
   createProduct(product: Product){
-    return this.http.post(`${environment.url_api}/products`, product);
+    return this.http.post(`${environment.urlAPI}/products`, product);
   }
 
   updateProduct(id: string, changes: Partial<Product>){
-    return this.http.put(`${environment.url_api}/products/${id}`, {changes});
+    return this.http.put(`${environment.urlAPI}/products/${id}`, {changes});
   }
 
   deleteProduct(id: string){
-    return this.http.delete(`${environment.url_api}/products/${id}`);
+    return this.http.delete(`${environment.urlAPI}/products/${id}`);
   }
 }
