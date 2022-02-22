@@ -11,7 +11,7 @@ import { Product } from '../../../core/models/product.model';
 })
 export class ProductDetailComponent implements OnInit {
 
-  product: Product | any;
+  product: Product;
 
   constructor(
     private route: ActivatedRoute,
@@ -21,10 +21,18 @@ export class ProductDetailComponent implements OnInit {
   ngOnInit() {
       this.route.params.subscribe((params: Params) => {
       const id = params['id'];
+      
       this.productsService.getProduct(id).subscribe((res) => {  
-      this.product = res;
+        this.product = res;
       });
     });
   }
+
+  // fetchProduct(id: string){
+  //   this.productsService.getProduct(id)
+  //   .subscribe(product => {
+  //     this.product = product;
+  //   });
+  // }
 
 }
