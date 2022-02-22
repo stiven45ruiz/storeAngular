@@ -11,7 +11,7 @@ import { Product } from '../../../core/models/product.model';
 })
 export class ProductDetailComponent implements OnInit {
 
-  product: Product;
+  product: Product | any;
 
   constructor(
     private route: ActivatedRoute,
@@ -21,7 +21,9 @@ export class ProductDetailComponent implements OnInit {
   ngOnInit() {
       this.route.params.subscribe((params: Params) => {
       const id = params['id'];
-      this.product = this.productsService.getProduct(id);
+      this.productsService.getProduct(id).subscribe((res) => {  
+      this.product = res;
+      });
     });
   }
 
