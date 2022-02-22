@@ -35,4 +35,36 @@ export class ProductDetailComponent implements OnInit {
   //   });
   // }
 
+  createProduct(){
+    const newProduct: Product = {
+      id: '222',
+      title: 'nuevo desde angular',
+      image: 'assets/images/mug.png',
+      price: 400095,
+      description: 'okoskdo ceieoceo ceocecke ecoecoem ceoel'
+    };
+    this.productsService.createProduct(newProduct)
+    .subscribe(product => {
+      console.log(product);
+    });
+  }
+
+  updateProduct(){
+    const updateProduct: Partial<Product> = {
+      price: 500095,
+      description: 'poducto Actualizado'
+    };
+    this.productsService.updateProduct('2', updateProduct)
+    .subscribe(product =>{
+      console.log(product)
+    });
+  }
+
+  deleteProduct(){
+    this.productsService.deleteProduct('222')
+    .subscribe(rta => {
+      console.log(rta);
+    });
+  }
+
 }
