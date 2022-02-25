@@ -1,13 +1,38 @@
-<mat-toolbar>
-    <mat-toolbar-row>
-        <div class="row between-xs middle-xs footer-row">
-            <span>Hecho Por Stiven Ruiz con ❤</span>
-            <nav>
-                Social:
-                <a mat-button>Facebook</a>
-                <a mat-button>Instagram</a>
-                <a mat-button>Twiter</a>
-            </nav>   
+<footer>
+    <div class="box">
+        <div>
+            <h3>Products</h3>
+            <ul>
+                <li><a href="">nuevos productos</a></li>
+                <li><a href="">En oferta
+
+                </a></li>
+                <li><a href="">Últimos Productos</a></li>
+            </ul>
         </div>
-    </mat-toolbar-row>
-</mat-toolbar>
+        <div>
+            <h3>Acerca de Store</h3>
+            <ul>
+                <li><a href="">Sobre nosotros</a></li>
+                <li><a href="">nuestras tiendas</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3>Contacto</h3>
+            <form class="example-form">
+                <mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label>Email</mat-label>
+                  <input type="email" matInput [formControl]="emailField" placeholder="Ex. pat@example.com">
+                  <mat-error *ngIf="emailField.hasError('email') && !emailField.hasError('required')">
+                    Please enter a valid email address
+                  </mat-error>
+                  <mat-error *ngIf="emailField.hasError('required')">
+                    Email is <strong>required</strong>
+                  </mat-error>
+                </mat-form-field>
+            </form>
+              
+            <button mat-raised-button *ngIf="emailField.valid" (click)="sendMail">Enviar</button>
+        </div>
+    </div>
+</footer>
