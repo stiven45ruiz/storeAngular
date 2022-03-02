@@ -32,7 +32,7 @@
                 </mat-form-field>
             </form>
               
-            <button mat-raised-button *ngIf="emailField.valid" (click)="sendMail">Enviar</button>
+            <button mat-raised-button [disabled]="emailField.invalid" (click)="sendMail">Enviar</button>
         </div>
     </div>
 </footer>

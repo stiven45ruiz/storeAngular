@@ -11,14 +11,8 @@ import { LayoutModule } from '@angular/cdk/layout';
 
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { InventoryComponent } from './components/inventory/inventory.component';
-import { MatGridListModule } from '@angular/material/grid-list';
-import { MatCardModule } from '@angular/material/card';
-import { MatMenuModule } from '@angular/material/menu';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatListModule } from '@angular/material/list';
+
+import { FormProductComponent } from './components/form-product/form-product.component';
 
 
 
@@ -28,21 +22,14 @@ import { MatListModule } from '@angular/material/list';
     ProductFormComponent,
     NavComponent,
     DashboardComponent,
-    InventoryComponent],
+    InventoryComponent,
+    FormProductComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
     ReactiveFormsModule,
     MaterialModule,
     LayoutModule,
-    MatGridListModule,
-    MatCardModule,
-    MatMenuModule,
-    MatIconModule,
-    MatButtonModule,
-    MatToolbarModule,
-    MatSidenavModule,
-    MatListModule,
   ]
 })
 export class AdminModule { }
