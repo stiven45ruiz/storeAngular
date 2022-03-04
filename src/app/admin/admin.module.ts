@@ -13,6 +13,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { InventoryComponent } from './components/inventory/inventory.component';
 
 import { FormProductComponent } from './components/form-product/form-product.component';
+import { ProductEditComponent } from './components/product-edit/product-edit.component';
 
 
 
@@ -23,7 +24,8 @@ import { FormProductComponent } from './components/form-product/form-product.com
     NavComponent,
     DashboardComponent,
     InventoryComponent,
-    FormProductComponent],
+    FormProductComponent,
+    ProductEditComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,

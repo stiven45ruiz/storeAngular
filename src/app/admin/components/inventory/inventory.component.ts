@@ -3,7 +3,9 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
 import { InventoryDataSource, InventoryItem } from './inventory-datasource';
-import { ProductsService} from './../../../core/services/products/products.service'
+import { ProductsService} from './../../../core/services/products/products.service';
+
+
 @Component({
   selector: 'app-inventory',
   templateUrl: './inventory.component.html',
@@ -19,7 +21,7 @@ export class InventoryComponent implements AfterViewInit, OnInit{
   dataSource: InventoryDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'title', 'price', 'action'];
+  displayedColumns: string[] = ['id', 'title', 'price', 'action'];
 
   constructor(
     private productsService: ProductsService
@@ -43,6 +45,7 @@ export class InventoryComponent implements AfterViewInit, OnInit{
       this.products = products;
     });
   }
+  
   deleteProduct(id: string){
     this.productsService.deleteProduct(id)
     .subscribe(rta => {
