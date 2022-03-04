@@ -1,0 +1,35 @@
+
+<div class="box">
+  <div class="form">
+    <h3>Sign In</h3>
+  <form class="example-form">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Email</mat-label>
+        <input type="email" matInput [formControl]="emailField" placeholder="Ex. pat@example.com">
+        <mat-error *ngIf="emailField.hasError('email') && !emailField.hasError('required')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="emailField.hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Password</mat-label>
+          <input type="password" matInput [formControl]="passwordField">
+          <mat-error *ngIf="passwordField.hasError('required')">
+            Password is <strong>required</strong>
+          </mat-error>
+      </mat-form-field>   
+  </form>
+  <button mat-raised-button [disabled]="emailField.invalid || passwordField.invalid" (click)="signIn">Sign In</button>
+  </div>
+
+
+  <div class="register">
+    <a routerLink="/signup">Sign Up</a>
+  </div>
+  
+</div>
+
+  

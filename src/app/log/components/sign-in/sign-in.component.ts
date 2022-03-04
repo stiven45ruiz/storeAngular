@@ -2,15 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl,  Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-footer',
-  templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.scss']
+  selector: 'app-sign-in',
+  templateUrl: './sign-in.component.html',
+  styleUrls: ['./sign-in.component.scss']
 })
-export class FooterComponent implements OnInit {
-
+export class SignInComponent implements OnInit{
   emailField: FormControl;
+  passwordField: FormControl;
 
-  constructor() { 
+  constructor() {
     this.emailField = new FormControl('',[
       Validators.required,
       Validators.email
@@ -18,13 +18,21 @@ export class FooterComponent implements OnInit {
     this.emailField.valueChanges
     .subscribe(value =>{
       console.log(value);
+    });
+
+    this.passwordField = new FormControl('',[
+      Validators.required
+    ]);
+    this.passwordField.valueChanges
+    .subscribe(value =>{
+      console.log(value);
     })
    }
 
   ngOnInit(): void {
+    
   }
-
-  sendMail(){
+  signIn(){
     if(this.emailField.value){
       console.log(this.emailField.value)
     }

@@ -21,6 +21,10 @@ const routes: Routes = [
         pathMatch: 'full',
       },
       {
+        path: '',
+        loadChildren:() => import('./log/log.module').then(m => m.LogModule)
+      },
+      {
         path: 'home',
         loadChildren:() => import('./home/home.module').then(m => m.HomeModule)
         //component: HomeComponent,
