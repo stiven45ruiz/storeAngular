@@ -4,32 +4,32 @@
     <!-- Id Column -->
     <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
-      <td mat-cell *matCellDef="let row">{{row.id}}</td>
+      <td mat-cell *matCellDef="let product">{{product.id}}</td>
     </ng-container>
 
     <!-- Name Column -->
     <ng-container matColumnDef="title">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Title</th>
-      <td mat-cell *matCellDef="let row">{{row.title}}</td>
+      <td mat-cell *matCellDef="let product">{{product.title}}</td>
     </ng-container>
 
     <ng-container matColumnDef="price">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Price</th>
-      <td mat-cell *matCellDef="let row">{{row.price | currency}}</td>
+      <td mat-cell *matCellDef="let product">{{product.price | currency}}</td>
     </ng-container>
 
     <!-- Action Column -->
     <ng-container matColumnDef="action">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Action</th>
-      <td mat-cell *matCellDef="let row">
-        <a mat-raised-button color="primary"  [routerLink]="['edit', products['id']]">Editar</a>
-        <button mat-raised-button color="warn" (click)="deleteProduct(row.id)">Eliminar</button>
+      <td mat-cell *matCellDef="let product">
+        <a mat-raised-button color="primary"  [routerLink]="['edit', product.id]">Editar</a>
+        <button mat-raised-button color="warn" (click)="deleteProduct(product.id)">Eliminar</button>
       </td>
     </ng-container>
 
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    <tr mat-row *matRowDef="let product; columns: displayedColumns;"></tr>
   </table>
 
   <mat-paginator #paginator

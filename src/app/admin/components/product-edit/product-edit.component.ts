@@ -4,7 +4,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 
 import { MyValidator } from './../../../utils/validators'
 
-import {ProductsService} from './../../../core/services/products/products.service'
+import { ProductsService } from './../../../core/services/products/products.service';
 
 @Component({
   selector: 'app-product-edit',
@@ -25,16 +25,17 @@ export class ProductEditComponent implements OnInit {
     this.buildForm();
    }
 
-  ngOnInit(): void {
+  ngOnInit(){
     this.activeRoute.params.subscribe((params: Params) => {
       this.id = params['id'];
       this.productsService.getProduct(this.id)
       .subscribe(product =>{
         this.form.patchValue(product);
       });
+      
     });
+    
   }
-
   saveProduct(event:Event){
     event.preventDefault();
     if(this.form.valid){
@@ -42,6 +43,7 @@ export class ProductEditComponent implements OnInit {
       this.productsService.updateProduct(this.id, product)
       .subscribe((newProduct) =>{
         console.log(newProduct);
+
         this.router.navigate(['./admin/inventory']);
       });
     }

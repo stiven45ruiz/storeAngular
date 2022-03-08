@@ -5,7 +5,6 @@ import { MatTable } from '@angular/material/table';
 import { InventoryDataSource, InventoryItem } from './inventory-datasource';
 import { ProductsService} from './../../../core/services/products/products.service';
 
-
 @Component({
   selector: 'app-inventory',
   templateUrl: './inventory.component.html',
@@ -37,6 +36,7 @@ export class InventoryComponent implements AfterViewInit, OnInit{
 
   ngOnInit(){
     this.fetchProducts();
+    
   }
 
   fetchProducts(){
