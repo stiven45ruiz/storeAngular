@@ -34,13 +34,16 @@ const routes: Routes = [
         loadChildren:() => import('./products/products.module').then(m => m.ProductsModule)
         //component: ProductsComponent,
       },
-      
       {
         path: 'contact',
         canActivate: [AdminGuard],
         loadChildren:() => import('./contact/contact.module').then(m => m.ContactModule)
         //component: ContactComponent,
       },
+      {
+        path: 'order',
+        loadChildren:() => import('./order/order.module').then(m => m.OrderModule)
+      }
     ]
   },
   {

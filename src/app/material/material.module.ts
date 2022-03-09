@@ -17,7 +17,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
-
+import { MatStepperModule } from '@angular/material/stepper';
 
 
 @NgModule({
@@ -40,6 +40,7 @@ import { MatListModule } from '@angular/material/list';
     MatMenuModule,
     MatSidenavModule,
     MatListModule,
+    MatStepperModule,
   ],
   exports: [
     MatButtonModule,
@@ -59,6 +60,7 @@ import { MatListModule } from '@angular/material/list';
     MatMenuModule,
     MatSidenavModule,
     MatListModule,
+    MatStepperModule,
   ]
 })
 export class MaterialModule { }
