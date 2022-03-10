@@ -9,6 +9,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 
 import { MaterialModule } from '../material/material.module';
+import { CartrepeatPipe } from './pipes/cartrepeat/cartrepeat.pipe';
+import { GroupOrderPipe } from './pipes/groupOrder/group-order.pipe';
 
 
 @NgModule({
@@ -17,12 +19,16 @@ import { MaterialModule } from '../material/material.module';
     HighlightDirective,
     HeaderComponent,
     FooterComponent,
+    CartrepeatPipe,
+    GroupOrderPipe,
   ],
   exports:[
     ExponentialPipe,
     HighlightDirective,
     HeaderComponent,
     FooterComponent,
+    CartrepeatPipe,
+    GroupOrderPipe
   ],
   imports: [
     CommonModule,

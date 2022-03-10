@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { map } from 'rxjs/operators'
+import { map } from 'rxjs/operators';
 
 import { CartService } from 'src/app/core/services/cart/cart.service';
 @Component({
