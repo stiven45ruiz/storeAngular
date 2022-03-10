@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule} from '@angular/forms'
-import { HttpClientModule } from '@angular/common/http'
+import { FormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { FirestoreModule } from '@angular/fire/firestore';
 
 import { CartComponent } from './cart/cart.component';
 import { DemoComponent } from './demo/demo.component';
@@ -14,6 +15,8 @@ import { LayoutComponent } from './layout/layout.component';
 import { SharedModule} from './shared/shared.module';
 import { CoreModule } from './core/core.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SharedModule,
     CoreModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    FirestoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

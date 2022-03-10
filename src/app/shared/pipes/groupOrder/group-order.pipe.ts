@@ -25,6 +25,7 @@ export class GroupOrderPipe implements PipeTransform {
       newItem.price = grouped[key][0].price;
       newItem.quantity = grouped[key].length;
       newItem.totalPrice = grouped[key][0].price * newItem.quantity;
+      
       order.push(newItem);
     });
 
